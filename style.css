@@ -8,8 +8,8 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   font-family: Georgia, serif;
-  color: white;
-  background: #100713;
+  color: #fff0f7;
+  background: #140817;
 }
 
 #app {
@@ -26,9 +26,10 @@ body {
   gap: 24px;
   text-align: center;
   position: relative;
+  isolation: isolate;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at center, #53203f 0%, #210d25 48%, #100713 100%);
+    radial-gradient(ellipse at 50% 35%, #69264d 0%, #35122f 45%, #140817 100%);
 }
 
 .scene.active {
@@ -36,10 +37,34 @@ body {
   animation: sceneIn 1s ease both;
 }
 
+.scene::before,
+.scene::after {
+  content: "♥  ✧  ♥  ✦  ♥";
+  position: absolute;
+  z-index: -1;
+  color: #ff9fc9;
+  opacity: .45;
+  font-size: 23px;
+  letter-spacing: 13px;
+  pointer-events: none;
+  animation: floatDecor 7s ease-in-out infinite;
+}
+
+.scene::before {
+  top: 12%;
+  left: 0;
+}
+
+.scene::after {
+  bottom: 12%;
+  right: 0;
+  animation-delay: -3s;
+}
+
 h1 {
   font-size: clamp(30px, 8vw, 48px);
   line-height: 1.3;
-  color: #ffd8e8;
+  color: #ffe0ef;
   text-shadow: 0 0 12px #ff4f9a, 0 0 30px #e91e63;
 }
 
@@ -66,120 +91,352 @@ button:active {
   transform: scale(.95);
 }
 
-.heart {
-  font-size: 100px;
-  filter: drop-shadow(0 0 18px #ff397b);
+.intro-hearts {
+  font-size: 44px;
+  color: #ffb9d9;
+  animation: heartbeat 1.4s infinite;
+}
+
+/* ARROW AND HEART SCENE */
+
+#heartScene {
+  background:
+    radial-gradient(ellipse at center, #76244f, #2c0c29 68%, #100713);
+}
+
+.love-title {
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+.arrow-stage {
+  width: min(330px, 90vw);
+  height: 220px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.target-heart {
+  position: absolute;
+  right: 36px;
+  top: 55px;
+  font-size: 88px;
+  filter: drop-shadow(0 0 9px #ff4b93);
   animation: heartbeat 1.1s infinite;
 }
 
-.scene::before,
-.scene::after {
-  content: "♥  ✦  ♥  ✧  ♥";
+.love-arrow {
   position: absolute;
-  color: #ff8fbe;
-  opacity: .35;
-  font-size: 25px;
-  letter-spacing: 18px;
-  pointer-events: none;
-  animation: floatDecor 7s ease-in-out infinite;
+  left: 20px;
+  top: 110px;
+  font-family: Arial, sans-serif;
+  font-size: 65px;
+  color: #fff0f6;
+  text-shadow: 0 0 12px #ffb4d6;
+  transform: rotate(-10deg);
+  animation: arrowFlight 2.4s ease-in-out forwards;
 }
 
-.scene::before {
-  top: 12%;
-  left: 0;
+.hit-glow {
+  position: absolute;
+  right: 38px;
+  top: 55px;
+  font-size: 88px;
+  opacity: 0;
+  transform: scale(.3);
+  animation: hitFlash 2.4s 1.65s ease-out forwards;
 }
 
-.scene::after {
-  bottom: 12%;
-  right: 0;
-  animation-delay: -3s;
+.hit-message {
+  opacity: 0;
+  animation: messageReveal 1s 2s ease forwards;
 }
 
-@keyframes heartbeat {
-  0%, 100% {
-    transform: scale(1);
+@keyframes arrowFlight {
+  0% {
+    left: 5px;
+    top: 140px;
+    opacity: 0;
+    transform: rotate(-10deg) scale(.65);
   }
-  15% {
-    transform: scale(1.18);
+  12% {
+    opacity: 1;
   }
-  30% {
-    transform: scale(1);
+  70% {
+    left: 170px;
+    top: 85px;
+    opacity: 1;
+    transform: rotate(-10deg) scale(1);
   }
-  45% {
-    transform: scale(1.12);
+  100% {
+    left: 220px;
+    top: 55px;
+    opacity: 0;
+    transform: rotate(-10deg) scale(.7);
   }
 }
 
-@keyframes buttonPulse {
-  0%, 100% {
-    box-shadow: 0 0 12px #ff4f9a60;
+@keyframes hitFlash {
+  0% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.3);
   }
   50% {
-    box-shadow: 0 0 28px #ff4f9a;
+    opacity: .9;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
   }
 }
 
-@keyframes sceneIn {
-  from {
-    opacity: 0;
-    transform: scale(.96);
-  }
+@keyframes messageReveal {
   to {
     opacity: 1;
-    transform: scale(1);
   }
 }
 
-@keyframes floatDecor {
-  0%, 100% {
-    transform: translateY(0) rotate(-4deg);
+@keyframes titleGlow {
+  from {
+    text-shadow: 0 0 8px #ff4f9a;
   }
-  50% {
-    transform: translateY(-20px) rotate(4deg);
+  to {
+    text-shadow: 0 0 28px #ff4f9a, 0 0 48px #ff9fc9;
   }
 }
+
+/* ROSE AND HEART TREE */
 
 #roseScene {
   background:
-    radial-gradient(ellipse at center, #7e294d, #321022 65%, #150811);
+    radial-gradient(ellipse at center, #9a3c65, #4b1539 65%, #190815);
 }
+
+.rose-decoration {
+  font-size: 38px;
+  animation: floatDecor 3s infinite;
+}
+
+.heart-tree {
+  font-size: 34px;
+  line-height: 1.3;
+  text-shadow: 0 0 16px #ff4b93;
+  animation: treeSway 4s ease-in-out infinite;
+}
+
+.heart-tree div {
+  animation: heartbeat 2s infinite;
+}
+
+/* PHOTO MEMORIES */
 
 #memories {
-  background:
-    linear-gradient(145deg, #281027, #6d234c, #190a20);
+  background: linear-gradient(145deg, #281027, #6d234c, #190a20);
 }
+
+.photo-grid {
+  width: min(380px, 95%);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.photo-placeholder {
+  min-height: 125px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 2px solid #ffd0e3;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #9d3c70, #451735);
+  box-shadow: 0 0 16px #ff80b550;
+  font-size: 38px;
+  animation: photoFloat 4s ease-in-out infinite;
+}
+
+.photo-placeholder:nth-child(even) {
+  animation-delay: -2s;
+}
+
+.photo-placeholder span,
+.photo-frame span {
+  font-size: 13px;
+  color: #ffe4f0;
+}
+
+/* BOOK */
 
 #bookScene {
-  background:
-    radial-gradient(ellipse, #633b61, #1b1029 70%);
+  background: radial-gradient(ellipse, #633b61, #1b1029 70%);
 }
+
+.book {
+  width: 230px;
+  height: 155px;
+  position: relative;
+  perspective: 700px;
+}
+
+.book-cover,
+.book-page {
+  position: absolute;
+  inset: 0;
+  padding: 20px;
+  border: 2px solid #ffd4e6;
+  border-radius: 5px 12px 12px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 24px #ff76b5;
+}
+
+.book-cover {
+  z-index: 2;
+  background: linear-gradient(135deg, #9e285e, #4c153d);
+  transform-origin: left;
+  animation: bookOpen 3s 1s ease-in-out infinite alternate;
+}
+
+.book-page {
+  background: #ffe9d6;
+  color: #6c244b;
+}
+
+/* PHOTO FRAMES */
 
 #framesScene {
-  background:
-    linear-gradient(135deg, #4d193e, #160d24);
+  background: linear-gradient(135deg, #4d193e, #160d24);
 }
+
+.frame-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+
+.photo-frame {
+  width: 135px;
+  min-height: 165px;
+  padding: 12px;
+  background: #f8d7e5;
+  border: 5px solid #d69a58;
+  color: #9e285e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  font-size: 40px;
+  box-shadow: 0 0 22px #ff8bc6;
+  animation: photoFloat 4s infinite;
+}
+
+.photo-frame:nth-child(2) {
+  animation-delay: -2s;
+}
+
+/* ENVELOPE */
 
 #envelopeScene {
-  background:
-    radial-gradient(ellipse, #85385e, #250d26 75%);
+  background: radial-gradient(ellipse, #85385e, #250d26 75%);
 }
+
+.envelope {
+  font-size: 120px;
+  filter: drop-shadow(0 0 22px #ff85bc);
+  animation: envelopeBeat 2s infinite;
+}
+
+/* LOVE LETTER */
 
 #letterScene {
-  background:
-    linear-gradient(135deg, #461d3b, #170d22);
+  background: linear-gradient(135deg, #461d3b, #170d22);
 }
 
-#letterScene p {
+.love-letter {
+  width: min(520px, 100%);
   padding: 25px;
-  border: 1px solid #ffb3d255;
-  border-radius: 18px;
-  background: #ffffff0c;
-  box-shadow: 0 0 24px #ff4f9a20;
+  border: 1px solid #ffb3d2;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #fff0df, #f9d5e5);
+  color: #692449;
+  box-shadow: 0 0 25px #ff4f9a50;
+  text-align: left;
+  animation: letterAppear 1.5s ease both;
 }
+
+.love-letter p {
+  margin-bottom: 12px;
+  color: #692449;
+  font-size: 16px;
+}
+
+/* VOICE NOTE */
 
 #voiceScene {
-  background:
-    radial-gradient(ellipse, #63244e, #160914 75%);
+  background: radial-gradient(ellipse, #63244e, #160914 75%);
+}
+
+audio {
+  width: min(330px, 100%);
+}
+
+/* ANIMATIONS */
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+}
+
+@keyframes buttonPulse {
+  0%, 100% { box-shadow: 0 0 12px #ff4f9a60; }
+  50% { box-shadow: 0 0 28px #ff4f9a; }
+}
+
+@keyframes sceneIn {
+  from { opacity: 0; transform: scale(.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatDecor {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-20px) rotate(4deg); }
+}
+
+@keyframes treeSway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes photoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes bookOpen {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(-155deg); }
+}
+
+@keyframes envelopeBeat {
+  0%, 100% { transform: scale(1) rotate(0); }
+  50% { transform: scale(1.1) rotate(-4deg); }
+}
+
+@keyframes letterAppear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 480px) {
@@ -191,8 +448,22 @@ button:active {
     font-size: 16px;
   }
 
-  button {
-    max-width: 100%;
+  .arrow-stage {
+    height: 200px;
+  }
+
+  .target-heart,
+  .hit-glow {
+    font-size: 72px;
+  }
+
+  .target-heart,
+  .hit-glow {
+    right: 25px;
+  }
+
+  .love-arrow {
+    font-size: 55px;
   }
 }
 
