@@ -1,1 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: Georgia, serif;
+  color: white;
+  background: #100713;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.scene {
+  min-height: 100vh;
+  padding: 35px 20px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at center, #53203f 0%, #210d25 48%, #100713 100%);
+}
+
+.scene.active {
+  display: flex;
+  animation: sceneIn 1s ease both;
+}
+
+h1 {
+  font-size: clamp(30px, 8vw, 48px);
+  line-height: 1.3;
+  color: #ffd8e8;
+  text-shadow: 0 0 12px #ff4f9a, 0 0 30px #e91e63;
+}
+
+p {
+  max-width: 520px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ffeaf3;
+}
+
+button {
+  border: 1px solid #ffb3d2;
+  border-radius: 30px;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #ff4f9a, #a51c64);
+  color: white;
+  font-size: 16px;
+  box-shadow: 0 0 20px #ff4f9a70;
+  cursor: pointer;
+  animation: buttonPulse 2s infinite;
+}
+
+button:active {
+  transform: scale(.95);
+}
+
+.heart {
+  font-size: 100px;
+  filter: drop-shadow(0 0 18px #ff397b);
+  animation: heartbeat 1.1s infinite;
+}
+
+.scene::before,
+.scene::after {
+  content: "♥  ✦  ♥  ✧  ♥";
+  position: absolute;
+  color: #ff8fbe;
+  opacity: .35;
+  font-size: 25px;
+  letter-spacing: 18px;
+  pointer-events: none;
+  animation: floatDecor 7s ease-in-out infinite;
+}
+
+.scene::before {
+  top: 12%;
+  left: 0;
+}
+
+.scene::after {
+  bottom: 12%;
+  right: 0;
+  animation-delay: -3s;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.18);
+  }
+  30% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 0 12px #ff4f9a60;
+  }
+  50% {
+    box-shadow: 0 0 28px #ff4f9a;
+  }
+}
+
+@keyframes sceneIn {
+  from {
+    opacity: 0;
+    transform: scale(.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatDecor {
+  0%, 100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(4deg);
+  }
+}
+
+#roseScene {
+  background:
+    radial-gradient(ellipse at center, #7e294d, #321022 65%, #150811);
+}
+
+#memories {
+  background:
+    linear-gradient(145deg, #281027, #6d234c, #190a20);
+}
+
+#bookScene {
+  background:
+    radial-gradient(ellipse, #633b61, #1b1029 70%);
+}
+
+#framesScene {
+  background:
+    linear-gradient(135deg, #4d193e, #160d24);
+}
+
+#envelopeScene {
+  background:
+    radial-gradient(ellipse, #85385e, #250d26 75%);
+}
+
+#letterScene {
+  background:
+    linear-gradient(135deg, #461d3b, #170d22);
+}
+
+#letterScene p {
+  padding: 25px;
+  border: 1px solid #ffb3d255;
+  border-radius: 18px;
+  background: #ffffff0c;
+  box-shadow: 0 0 24px #ff4f9a20;
+}
+
+#voiceScene {
+  background:
+    radial-gradient(ellipse, #63244e, #160914 75%);
+}
+
+@media (max-width: 480px) {
+  .scene {
+    padding: 25px 18px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  button {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
