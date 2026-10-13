@@ -19,17 +19,14 @@
 
     <section class="scene" id="heartScene">
       <h1 class="love-title">I Love You ❤️</h1>
-
       <div class="arrow-stage">
         <div class="target-heart">❤️</div>
         <div class="love-arrow" id="loveArrow">➶</div>
         <div class="hit-glow" id="hitGlow">💖</div>
       </div>
-
       <p class="hit-message" id="hitMessage">
         You have my heart forever 💘
       </p>
-
       <button class="nextBtn">Continue 💕</button>
     </section>
 
@@ -47,15 +44,35 @@
       <button class="nextBtn">Continue 💗</button>
     </section>
 
+    <!-- OUR PHOTOS AND VIDEO -->
     <section class="scene" id="memories">
       <h1>Our Memories 📸</h1>
       <p>Every memory with you is precious to me.</p>
+
       <div class="photo-grid">
-        <div class="photo-placeholder">📷<span>Our Memory</span></div>
-        <div class="photo-placeholder">💕<span>Sweet Moments</span></div>
-        <div class="photo-placeholder">🌸<span>You & Me</span></div>
-        <div class="photo-placeholder">❤️<span>Forever Us</span></div>
+        <div class="photo-placeholder">
+          <img src="assets/photo-1.jpg" alt="Our special memory">
+          <span>Our Memory ❤️</span>
+        </div>
+
+        <div class="photo-placeholder">
+          <img src="assets/photo-2.jpg" alt="Ayushi">
+          <span>My Beautiful Ayushi 💗</span>
+        </div>
+
+        <div class="photo-placeholder">
+          <img src="assets/photo-3.jpg" alt="A special moment">
+          <span>Sweet Moments 🌸</span>
+        </div>
       </div>
+
+      <h2>Our Special Video 🎬</h2>
+      <video controls playsinline preload="metadata"
+        style="width:100%; max-width:350px; border-radius:15px;">
+        <source src="assets/our-video.mp4" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+
       <button class="nextBtn">Continue 💖</button>
     </section>
 
@@ -86,24 +103,40 @@
       <button class="nextBtn">Read My Letter ❤️</button>
     </section>
 
+    <!-- YOUR LOVE LETTER -->
     <section class="scene" id="letterScene">
       <h1>My Dear Ayushi ❤️</h1>
+
       <div class="love-letter">
-        <p>Dear Ayushi,</p>
-        <p>You make ordinary moments feel beautiful. Every conversation and every memory with you means a lot to me.</p>
-        <p>Even the smallest moments become special when they include you. I hope this little surprise makes you smile.</p>
-        <p>With all my love,</p>
-        <p>Yours ❤️</p>
+        <p>My Dear Ayushi, ❤️</p>
+
+        <p>I know I haven't been able to give you enough time lately because of some family problems. I'm really sorry if this has made you feel lonely or less loved.</p>
+
+        <p>Please never think that my love for you has changed. Even when I can't talk to you as much as I want, you are always in my heart. ❤️</p>
+
+        <p>I miss you every single day. I wish I could spend more time with you, talk to you for hours, and see that beautiful smile on your face.</p>
+
+        <p>I'm dealing with some things right now, but you are still so special to me. Thank you for being in my life and for understanding me. 🫂</p>
+
+        <p>I love you sooo much, Ayushi. More than these words can ever explain. I miss you so much, my love. 💋❤️</p>
+
+        <p>Whatever happens, you will always have a special place in my heart.</p>
+
+        <p>Forever yours,<br>
+        Your Rishabh ❤️</p>
       </div>
+
       <button class="nextBtn">One Last Surprise 🎵</button>
     </section>
 
     <section class="scene" id="voiceScene">
       <h1>A Message from My Heart 🎶</h1>
       <p>There's something special I want you to hear.</p>
+
       <audio id="voiceAudio" controls preload="none">
         <source src="assets/voice-note.mp3" type="audio/mpeg">
       </audio>
+
       <button id="replayBtn">Start Again ❤️</button>
     </section>
 
