@@ -7,141 +7,152 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<main id="app">
 
-  <main id="app">
+  <section class="scene intro active" id="intro">
+    <div class="intro-hearts">♡ ♥ ♡</div>
+    <h1>For You, Ayushi ❤️</h1>
+    <p>A little surprise made just for you...</p>
+    <button id="startBtn">Open Your Surprise 💌</button>
+  </section>
 
-    <section class="scene intro active" id="intro">
-      <div class="intro-hearts">♡ ♥ ♡</div>
-      <h1>For You, Ayushi ❤️</h1>
-      <p>A little surprise made just for you...</p>
-      <button id="startBtn">Open Your Surprise 💌</button>
-    </section>
+  <section class="scene" id="heartScene">
+    <h1 class="love-title">I Love You ❤️</h1>
+    <div class="arrow-stage">
+      <div class="target-heart">❤️</div>
+      <div class="love-arrow" id="loveArrow">➶</div>
+      <div class="hit-glow" id="hitGlow">💖</div>
+    </div>
+    <p class="hit-message" id="hitMessage">You have my heart forever 💘</p>
+    <button class="nextBtn">Continue 💕</button>
+  </section>
 
-    <section class="scene" id="heartScene">
-      <h1 class="love-title">I Love You ❤️</h1>
-      <div class="arrow-stage">
-        <div class="target-heart">❤️</div>
-        <div class="love-arrow" id="loveArrow">➶</div>
-        <div class="hit-glow" id="hitGlow">💖</div>
+  <section class="scene" id="roseScene">
+    <div class="rose-decoration">🌹 🌹 🌹</div>
+    <h1>My Love for You 🌹</h1>
+    <p>Every little moment with you is special.</p>
+    <div class="heart-tree">
+      <div>💗 💗 💗</div>
+      <div>💗 💖 💗</div>
+      <div>💖 💗 💖</div>
+      <div>💗 💖 💗</div>
+      <div>🌳</div>
+    </div>
+    <button class="nextBtn">Continue 💗</button>
+  </section>
+
+  <section class="scene" id="memories">
+    <h1>Our Memories 📸</h1>
+    <p>Every memory with you is precious to me.</p>
+
+    <div class="photo-grid">
+      <div class="photo-placeholder">
+        <img src="assets/photo-1.jpg" alt="Our special memory">
+        <span>Our Memory ❤️</span>
       </div>
-      <p class="hit-message" id="hitMessage">
-        You have my heart forever 💘
-      </p>
-      <button class="nextBtn">Continue 💕</button>
-    </section>
-
-    <section class="scene" id="roseScene">
-      <div class="rose-decoration">🌹 🌹 🌹</div>
-      <h1>My Love for You 🌹</h1>
-      <p>Every little moment with you is special.</p>
-      <div class="heart-tree">
-        <div>💗 💗 💗</div>
-        <div>💗 💖 💗</div>
-        <div>💖 💗 💖</div>
-        <div>💗 💖 💗</div>
-        <div>🌳</div>
+      <div class="photo-placeholder">
+        <img src="assets/photo-2.jpg" alt="Ayushi">
+        <span>My Beautiful Ayushi 💗</span>
       </div>
-      <button class="nextBtn">Continue 💗</button>
-    </section>
-
-    <!-- OUR PHOTOS AND VIDEO -->
-    <section class="scene" id="memories">
-      <h1>Our Memories 📸</h1>
-      <p>Every memory with you is precious to me.</p>
-
-      <div class="photo-grid">
-        <div class="photo-placeholder">
-          <img src="assets/photo-1.jpg" alt="Our special memory">
-          <span>Our Memory ❤️</span>
-        </div>
-
-        <div class="photo-placeholder">
-          <img src="assets/photo-2.jpg" alt="Ayushi">
-          <span>My Beautiful Ayushi 💗</span>
-        </div>
-
-        <div class="photo-placeholder">
-          <img src="assets/photo-3.jpg" alt="A special moment">
-          <span>Sweet Moments 🌸</span>
-        </div>
+      <div class="photo-placeholder">
+        <img src="assets/photo-3.jpg" alt="Our special moment">
+        <span>Sweet Moments 🌸</span>
       </div>
+    </div>
 
-      <h2>Our Special Video 🎬</h2>
-      <video controls playsinline preload="metadata"
-        style="width:100%; max-width:350px; border-radius:15px;">
-        <source src="assets/our-video.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
+    <h2>Our Special Video 🎬</h2>
+    <video controls playsinline preload="metadata"
+      style="width:100%;max-width:350px;border-radius:15px;">
+      <source src="assets/our-video.mp4" type="video/mp4">
+      Your browser does not support video playback.
+    </video>
 
-      <button class="nextBtn">Continue 💖</button>
-    </section>
+    <button class="nextBtn">Continue 💖</button>
+  </section>
 
-    <section class="scene" id="bookScene">
-      <h1>A Little Book of Love 📖</h1>
-      <div class="book">
-        <div class="book-cover">For Ayushi ❤️</div>
-        <div class="book-page">You are my favourite story. 💌</div>
-      </div>
-      <p>Every page has a little piece of my heart.</p>
-      <button class="nextBtn">Continue 💕</button>
-    </section>
+  <section class="scene" id="bookScene">
+    <h1>A Little Book of Love 📖</h1>
+    <div class="book">
+      <div class="book-cover">For Ayushi ❤️</div>
+      <div class="book-page">You are my favourite story. 💌</div>
+    </div>
+    <p>Every page has a little piece of my heart.</p>
+    <button class="nextBtn">Continue 💕</button>
+  </section>
 
-    <section class="scene" id="framesScene">
-      <h1>You Are My Favourite Person 🥰</h1>
-      <div class="frame-row">
-        <div class="photo-frame">💗<span>My Happiness</span></div>
-        <div class="photo-frame">🌷<span>My Favourite</span></div>
-      </div>
-      <p>You make my world more beautiful.</p>
-      <button class="nextBtn">Continue 💗</button>
-    </section>
+  <section class="scene" id="framesScene">
+    <h1>You Are My Favourite Person 🥰</h1>
+    <div class="frame-row">
+      <div class="photo-frame">💗<span>My Happiness</span></div>
+      <div class="photo-frame">🌷<span>My Favourite</span></div>
+    </div>
+    <p>You make my world more beautiful.</p>
+    <button class="nextBtn">Continue 💗</button>
+  </section>
 
-    <section class="scene" id="envelopeScene">
-      <h1>A Letter for You 💌</h1>
-      <div class="envelope">💌</div>
-      <p>A little message, written from my heart.</p>
-      <button class="nextBtn">Read My Letter ❤️</button>
-    </section>
+  <section class="scene" id="envelopeScene">
+    <h1>A Letter for You 💌</h1>
+    <div class="envelope">💌</div>
+    <p>A little message, written from my heart.</p>
+    <button class="nextBtn">Read My Letter ❤️</button>
+  </section>
 
-    <!-- YOUR LOVE LETTER -->
-    <section class="scene" id="letterScene">
-      <h1>My Dear Ayushi ❤️</h1>
+  <section class="scene" id="letterScene">
+    <h1>My Dear Ayushi ❤️</h1>
+    <div class="love-letter">
+      <p>My Dear Ayushi, ❤️</p>
+      <p>I know I haven't been able to give you enough time lately because of some family problems. I'm really sorry if this has made you feel lonely.</p>
+      <p>Please never think that my love for you has changed. Even when I can't talk to you as much as I want, you are always in my heart. ❤️</p>
+      <p>I miss you every single day. I wish I could spend more time with you, talk to you for hours, and see your beautiful smile.</p>
+      <p>I'm dealing with some things right now, but you are still so special to me. Thank you for being in my life. 🫂</p>
+      <p>I love you sooo much, Ayushi. More than these words can explain. I miss you so much, my love. 💋❤️</p>
+      <p>Whatever happens, you will always have a special place in my heart.</p>
+      <p>Forever yours,<br>Your Rishabh ❤️</p>
+    </div>
+    <button class="nextBtn">One Last Surprise 🎵</button>
+  </section>
 
-      <div class="love-letter">
-        <p>My Dear Ayushi, ❤️</p>
+  <section class="scene" id="voiceScene">
+    <h1>A Message from My Heart 🎶</h1>
+    <p>Ayushi, this message is just for you. ❤️</p>
 
-        <p>I know I haven't been able to give you enough time lately because of some family problems. I'm really sorry if this has made you feel lonely or less loved.</p>
+    <div class="love-letter">
+      <p>My love, I miss you so much.</p>
+      <p>I'm sorry I can't give you enough time because of family problems.</p>
+      <p>But please remember, my love for you has never changed.</p>
+      <p>I love you sooo much, Ayushi. You mean the world to me. ❤️🫂</p>
+      <p>Forever yours, Rishabh 💖</p>
+    </div>
 
-        <p>Please never think that my love for you has changed. Even when I can't talk to you as much as I want, you are always in my heart. ❤️</p>
+    <button id="speakMessageBtn">🔊 Listen to My Message</button>
+    <button id="replayBtn">Start Again ❤️</button>
+  </section>
 
-        <p>I miss you every single day. I wish I could spend more time with you, talk to you for hours, and see that beautiful smile on your face.</p>
+</main>
 
-        <p>I'm dealing with some things right now, but you are still so special to me. Thank you for being in my life and for understanding me. 🫂</p>
+<script src="script.js"></script>
+<script>
+document.getElementById("speakMessageBtn").addEventListener("click", function () {
+  if (!("speechSynthesis" in window)) {
+    alert("Sorry, voice playback is not supported in this browser.");
+    return;
+  }
 
-        <p>I love you sooo much, Ayushi. More than these words can ever explain. I miss you so much, my love. 💋❤️</p>
+  window.speechSynthesis.cancel();
 
-        <p>Whatever happens, you will always have a special place in my heart.</p>
+  const message = new SpeechSynthesisUtterance(
+    "My dear Ayushi. I miss you so much. " +
+    "I'm sorry I can't give you enough time because of family problems. " +
+    "But please remember, my love for you has never changed. " +
+    "I love you so much, Ayushi. You mean the world to me. " +
+    "Forever yours, Rishabh."
+  );
 
-        <p>Forever yours,<br>
-        Your Rishabh ❤️</p>
-      </div>
-
-      <button class="nextBtn">One Last Surprise 🎵</button>
-    </section>
-
-    <section class="scene" id="voiceScene">
-      <h1>A Message from My Heart 🎶</h1>
-      <p>There's something special I want you to hear.</p>
-
-      <audio id="voiceAudio" controls preload="none">
-        <source src="assets/voice-note.mp3" type="audio/mpeg">
-      </audio>
-
-      <button id="replayBtn">Start Again ❤️</button>
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
+  message.lang = "en-IN";
+  message.rate = 0.85;
+  message.pitch = 1;
+  window.speechSynthesis.speak(message);
+});
+</script>
 </body>
 </html>
