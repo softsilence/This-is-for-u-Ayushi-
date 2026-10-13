@@ -9,72 +9,104 @@
 <body>
 
   <main id="app">
+
     <section class="scene intro active" id="intro">
+      <div class="intro-hearts">♡ ♥ ♡</div>
       <h1>For You, Ayushi ❤️</h1>
       <p>A little surprise made just for you...</p>
       <button id="startBtn">Open Your Surprise 💌</button>
     </section>
 
     <section class="scene" id="heartScene">
-  <h1 class="love-title">I Love You ❤️</h1>
+      <h1 class="love-title">I Love You ❤️</h1>
 
-  <div class="arrow-stage">
-    <div class="target-heart">❤️</div>
-    <div class="love-arrow" id="loveArrow">➶</div>
-    <div class="hit-glow" id="hitGlow">💖</div>
-  </div>
+      <div class="arrow-stage">
+        <div class="target-heart">❤️</div>
+        <div class="love-arrow" id="loveArrow">➶</div>
+        <div class="hit-glow" id="hitGlow">💖</div>
+      </div>
 
-  <p class="hit-message" id="hitMessage">
-    You have my heart forever 💘
-  </p>
+      <p class="hit-message" id="hitMessage">
+        You have my heart forever 💘
+      </p>
 
-  <button class="nextBtn">Continue 💕</button>
-</section>
-      <h1>I Love You ❤️</h1>
-      <div class="heart">❤️</div>
       <button class="nextBtn">Continue 💕</button>
     </section>
 
     <section class="scene" id="roseScene">
+      <div class="rose-decoration">🌹 🌹 🌹</div>
       <h1>My Love for You 🌹</h1>
       <p>Every little moment with you is special.</p>
+      <div class="heart-tree">
+        <div>💗 💗 💗</div>
+        <div>💗 💖 💗</div>
+        <div>💖 💗 💖</div>
+        <div>💗 💖 💗</div>
+        <div>🌳</div>
+      </div>
       <button class="nextBtn">Continue 💗</button>
     </section>
 
     <section class="scene" id="memories">
       <h1>Our Memories 📸</h1>
-      <p>Our favourite moments belong here.</p>
+      <p>Every memory with you is precious to me.</p>
+      <div class="photo-grid">
+        <div class="photo-placeholder">📷<span>Our Memory</span></div>
+        <div class="photo-placeholder">💕<span>Sweet Moments</span></div>
+        <div class="photo-placeholder">🌸<span>You & Me</span></div>
+        <div class="photo-placeholder">❤️<span>Forever Us</span></div>
+      </div>
       <button class="nextBtn">Continue 💖</button>
     </section>
 
     <section class="scene" id="bookScene">
       <h1>A Little Book of Love 📖</h1>
+      <div class="book">
+        <div class="book-cover">For Ayushi ❤️</div>
+        <div class="book-page">You are my favourite story. 💌</div>
+      </div>
       <p>Every page has a little piece of my heart.</p>
       <button class="nextBtn">Continue 💕</button>
     </section>
 
     <section class="scene" id="framesScene">
       <h1>You Are My Favourite Person 🥰</h1>
+      <div class="frame-row">
+        <div class="photo-frame">💗<span>My Happiness</span></div>
+        <div class="photo-frame">🌷<span>My Favourite</span></div>
+      </div>
+      <p>You make my world more beautiful.</p>
       <button class="nextBtn">Continue 💗</button>
     </section>
 
     <section class="scene" id="envelopeScene">
       <h1>A Letter for You 💌</h1>
+      <div class="envelope">💌</div>
+      <p>A little message, written from my heart.</p>
       <button class="nextBtn">Read My Letter ❤️</button>
     </section>
 
     <section class="scene" id="letterScene">
       <h1>My Dear Ayushi ❤️</h1>
-      <p>You make ordinary moments feel beautiful.
-      I am grateful for every memory we share.</p>
+      <div class="love-letter">
+        <p>Dear Ayushi,</p>
+        <p>You make ordinary moments feel beautiful. Every conversation and every memory with you means a lot to me.</p>
+        <p>Even the smallest moments become special when they include you. I hope this little surprise makes you smile.</p>
+        <p>With all my love,</p>
+        <p>Yours ❤️</p>
+      </div>
       <button class="nextBtn">One Last Surprise 🎵</button>
     </section>
 
     <section class="scene" id="voiceScene">
       <h1>A Message from My Heart 🎶</h1>
       <p>There's something special I want you to hear.</p>
+      <audio id="voiceAudio" controls preload="none">
+        <source src="assets/voice-note.mp3" type="audio/mpeg">
+      </audio>
       <button id="replayBtn">Start Again ❤️</button>
     </section>
+
   </main>
 
   <script src="script.js"></script>
